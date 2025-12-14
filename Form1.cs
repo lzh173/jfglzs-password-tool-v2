@@ -108,7 +108,7 @@ namespace jfglzs_password_tool_v2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            label3.Text = OptimizedTruncatedForgotIssuer.DecryptTruncatedOptimized(textBox2.Text);
+            textBox3.Text = OptimizedTruncatedForgotIssuer.DecryptTruncatedOptimized(textBox2.Text);
         }
     }
     public class OptimizedTruncatedForgotIssuer

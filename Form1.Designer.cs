@@ -43,6 +43,9 @@
             label3 = new Label();
             button2 = new Button();
             textBox2 = new TextBox();
+            label4 = new Label();
+            textBox3 = new TextBox();
+            label5 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -167,6 +170,9 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(textBox3);
+            groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(textBox2);
@@ -188,20 +194,45 @@
             // 
             // button2
             // 
-            button2.Location = new Point(70, 101);
+            button2.Location = new Point(36, 101);
             button2.Name = "button2";
-            button2.Size = new Size(94, 29);
+            button2.Size = new Size(207, 29);
             button2.TabIndex = 1;
-            button2.Text = "获取密码并";
+            button2.Text = "读取密码（仅限9.98-10.2）";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(70, 36);
+            textBox2.Location = new Point(74, 36);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(248, 27);
+            textBox2.Size = new Size(290, 27);
             textBox2.TabIndex = 0;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(15, 41);
+            label4.Name = "label4";
+            label4.Size = new Size(39, 20);
+            label4.TabIndex = 2;
+            label4.Text = "密文";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(74, 71);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(290, 27);
+            textBox3.TabIndex = 3;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(15, 74);
+            label5.Name = "label5";
+            label5.Size = new Size(39, 20);
+            label5.TabIndex = 4;
+            label5.Text = "明文";
             // 
             // Form1
             // 
@@ -236,5 +267,8 @@
         private Label label3;
         private Button button2;
         private TextBox textBox2;
+        private Label label5;
+        private TextBox textBox3;
+        private Label label4;
     }
 }
