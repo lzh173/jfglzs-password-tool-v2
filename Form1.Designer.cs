@@ -40,14 +40,15 @@
             radioButton1 = new RadioButton();
             dateTimePicker1 = new DateTimePicker();
             groupBox2 = new GroupBox();
-            label3 = new Label();
+            label5 = new Label();
+            textBox3 = new TextBox();
+            label4 = new Label();
             button2 = new Button();
             textBox2 = new TextBox();
-            label4 = new Label();
-            textBox3 = new TextBox();
-            label5 = new Label();
+            numericUpDown1 = new NumericUpDown();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -173,7 +174,6 @@
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(textBox3);
             groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(button2);
             groupBox2.Controls.Add(textBox2);
             groupBox2.Location = new Point(389, 12);
@@ -183,20 +183,36 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "密码破解";
             // 
-            // label3
+            // label5
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(57, 165);
-            label3.Name = "label3";
-            label3.Size = new Size(53, 20);
-            label3.TabIndex = 2;
-            label3.Text = "label3";
+            label5.AutoSize = true;
+            label5.Location = new Point(15, 74);
+            label5.Name = "label5";
+            label5.Size = new Size(39, 20);
+            label5.TabIndex = 4;
+            label5.Text = "明文";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(74, 71);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(290, 27);
+            textBox3.TabIndex = 3;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(15, 41);
+            label4.Name = "label4";
+            label4.Size = new Size(39, 20);
+            label4.TabIndex = 2;
+            label4.Text = "密文";
             // 
             // button2
             // 
-            button2.Location = new Point(36, 101);
+            button2.Location = new Point(15, 110);
             button2.Name = "button2";
-            button2.Size = new Size(207, 29);
+            button2.Size = new Size(207, 45);
             button2.TabIndex = 1;
             button2.Text = "读取密码（仅限9.98-10.2）";
             button2.UseVisualStyleBackColor = true;
@@ -209,30 +225,12 @@
             textBox2.Size = new Size(290, 27);
             textBox2.TabIndex = 0;
             // 
-            // label4
+            // numericUpDown1
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(15, 41);
-            label4.Name = "label4";
-            label4.Size = new Size(39, 20);
-            label4.TabIndex = 2;
-            label4.Text = "密文";
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(74, 71);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(290, 27);
-            textBox3.TabIndex = 3;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(15, 74);
-            label5.Name = "label5";
-            label5.Size = new Size(39, 20);
-            label5.TabIndex = 4;
-            label5.Text = "明文";
+            numericUpDown1.Location = new Point(0, 0);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(120, 27);
+            numericUpDown1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -242,11 +240,12 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "Form1";
-            Text = "Form1";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
         }
 
@@ -264,11 +263,11 @@
         private Label label2;
         private TextBox textBox1;
         private GroupBox groupBox2;
-        private Label label3;
         private Button button2;
         private TextBox textBox2;
         private Label label5;
         private TextBox textBox3;
         private Label label4;
+        private NumericUpDown numericUpDown1;
     }
 }

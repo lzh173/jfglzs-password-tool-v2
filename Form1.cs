@@ -1,6 +1,8 @@
+using Microsoft.Win32;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace jfglzs_password_tool_v2
 {
@@ -18,10 +20,34 @@ namespace jfglzs_password_tool_v2
             // 显示ASCII码值
             textBox1.Text = asciiValue.ToString();
             radioButton1.Checked = true;
+            Random random = new Random();
+            string title = "";
+            this.Text = GenerateTitle();
 
         }
 
+        static string GenerateTitle()
+        {
+            Random rand = new Random();
+            // 生成随机数
+            int r1 = rand.Next(1, 992001);
+            int r2 = rand.Next(1, 992001);
+            int r3 = rand.Next(1, 992001);
 
+            // 颜色数（简化处理）
+            int colorCount = 256; // 或 rand.Next(16, 65537);
+            int r4 = rand.Next(colorCount, 100001);
+            int r5 = rand.Next(91, 1146);
+
+            // 计算
+            int sum = r1 + r2;
+            int product = r4 * r5;
+
+
+
+            // 构建标题
+            return $"{sum} 机房-管理-助手_密码{r3}工具 {product}";
+        }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
@@ -108,7 +134,33 @@ namespace jfglzs_password_tool_v2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox3.Text = OptimizedTruncatedForgotIssuer.DecryptTruncatedOptimized(textBox2.Text);
+            RegistryKey hklm = Registry.CurrentUser;
+            RegistryKey hkSoftware = hklm.OpenSubKey("Software");
+
+
+
+
+            if (hkSoftware != null)
+            {
+                textBox2.Text = (string)hkSoftware.GetValue("n");
+                textBox3.Text = OptimizedTruncatedForgotIssuer.DecryptTruncatedOptimized(textBox2.Text);
+
+
+            }
+            else
+            {
+                MessageBox.Show("未找到注册表项！（可能没有安装助手）");
+            }
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
     public class OptimizedTruncatedForgotIssuer
